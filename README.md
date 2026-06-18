@@ -156,7 +156,6 @@ def tela2(request):
 def tela3(request):
     return render(request, "nome_do_app/tela3.html")
 ```
-
 ### Testar
 
 ```bash
