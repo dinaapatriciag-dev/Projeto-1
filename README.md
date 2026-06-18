@@ -9,7 +9,7 @@ Este guia vai te ajudar a transformar o protótipo HTML do seu grupo em uma apli
 > Substitua `nome_do_app` pelo nome escolhido pelo grupo em todos os arquivos.
 
 ---
-
+# Checkpoint 1 - Estrutura inicial
 # Passo 0 — Criar o Projeto
 
 ## Criar ambiente virtual
@@ -154,6 +154,7 @@ python manage.py runserver
 Acesse cada URL e verifique se o servidor responde sem erros antes de continuar.
 
 ---
+# Checkpoint 2 - Templates + CSS
 
 ## Passo 6 — Criar os Templates HTML
 
