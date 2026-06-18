@@ -144,18 +144,7 @@ def tela3(request):
 ```
 
 
-```python
-from django.shortcuts import render
 
-def tela1(request):
-    return render(request, "nome_do_app/tela1.html")
-
-def tela2(request):
-    return render(request, "nome_do_app/tela2.html")
-
-def tela3(request):
-    return render(request, "nome_do_app/tela3.html")
-```
 ### Testar
 
 ```bash
