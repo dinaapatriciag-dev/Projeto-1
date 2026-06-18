@@ -154,3 +154,74 @@ python manage.py runserver
 Acesse cada URL e verifique se o servidor responde sem erros antes de continuar.
 
 ---
+
+## Passo 6 — Criar os Templates HTML
+
+### Estrutura de Pastas
+
+```
+nome_do_app/
+└── templates/
+    └── nome_do_app/
+        ├── tela1.html
+        ├── tela2.html
+        └── tela3.html
+```
+
+Copie o conteúdo HTML do protótipo do grupo para cada arquivo correspondente.
+
+---
+
+## Passo 7 — Aplicar o CSS
+
+O CSS pode ficar dentro do próprio HTML, na tag `<style>`, ou em arquivo separado.
+
+### Opção A — CSS dentro do HTML (mais simples)
+
+```html
+<head>
+    <style>
+        /* cole aqui o CSS do protótipo */
+    </style>
+</head>
+```
+
+### Opção B — Arquivo CSS separado
+
+Crie a estrutura:
+
+```
+nome_do_app/
+└── static/
+    └── nome_do_app/
+        └── css/
+            └── style.css
+```
+
+E carregue no template:
+
+```html
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'nome_do_app/css/style.css' %}">
+</head>
+```
+
+---
+
+## Passo 8 — Navegação entre Telas
+
+Substitua os links fixos do protótipo por links dinâmicos com `{% url %}`.
+
+```html
+<!-- Antes -->
+<a href="tela2.html">Sobre</a>
+
+<!-- Depois -->
+<a href="{% url 'nome_do_app:tela2' %}">Sobre</a>
+```
+
+Teste a navegação entre todas as telas antes de continuar.
+
+---
