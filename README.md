@@ -223,3 +223,86 @@ Substitua os links fixos do protótipo por links dinâmicos com `{% url %}`.
 Teste a navegação entre todas as telas antes de continuar.
 
 ---
+# Checkpoint 3 - Contexto dinâmico
+
+## Passo 9 — Contexto Dinâmico
+
+Escolha uma seção do protótipo que tenha itens repetidos — cards, lista de atividades, membros da equipe, etc. — e transforme em uma lista de dicionários na view.
+
+Arquivo: `nome_do_app/views.py`
+
+```python
+def tela1(request):
+
+    itens = [
+        {
+            "id": 1,
+            "titulo": "Nome do item 1",
+            "descricao": "Descrição do item 1",
+        },
+        {
+            "id": 2,
+            "titulo": "Nome do item 2",
+            "descricao": "Descrição do item 2",
+        },
+        {
+            "id": 3,
+            "titulo": "Nome do item 3",
+            "descricao": "Descrição do item 3",
+        },
+    ]
+
+    context = {
+        "itens": itens,
+    }
+
+    return render(request, "nome_do_app/tela1.html", context)
+```
+
+> Adapte os campos do dicionário para o conteúdo do seu projeto.
+> Exemplo: cards do Instagram podem ter `imagem`, `descricao` e `link`.
+
+---
+
+## Passo 10 — Usar o Contexto no Template
+
+Atualize o template para substituir os elementos repetidos pelo `{% for %}`:
+
+```html
+{% if itens %}
+
+    {% for item in itens %}
+
+        <div class="card">
+
+            <h2>{{ item.titulo }}</h2>
+
+            <p>{{ item.descricao }}</p>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>Nenhum item encontrado.</p>
+
+{% endif %}
+```
+
+---
+
+## Passo 11 — Testar o Resultado Final
+
+```bash
+python manage.py runserver
+```
+
+Verifique:
+
+- [ ] As 3 telas abrem no navegador sem erros
+- [ ] O CSS do protótipo está aplicado
+- [ ] A navegação entre as telas funciona com `{% url %}`
+- [ ] Pelo menos uma tela usa `{% for %}` e `{% if %}` com o contexto da view
+
+---
