@@ -118,7 +118,18 @@ urlpatterns = [
     path("tela3/", views.tela3, name="tela3"),
 ]
 ```
+```python
+from django.shortcuts import render
 
+def tela1(request):
+    return render(request, "nome_do_app/tela1.html")
+
+def tela2(request):
+    return render(request, "nome_do_app/tela2.html")
+
+def tela3(request):
+    return render(request, "nome_do_app/tela3.html")
+```
 > Substitua `tela1`, `tela2` e `tela3` pelos nomes que fazem sentido para o seu projeto.
 > Exemplo: `index`, `sobre`, `contato` ou `inicio`, `atividades`, `equipe`.
 
