@@ -297,6 +297,74 @@ Atualize o template para substituir os elementos repetidos pelo `{% for %}`:
 ```bash
 python manage.py runserver
 ```
+---
+# Checkpoint Bônus - Botão para WhatsApp
+
+## Passo 12 — Adicionar um botão para contato via WhatsApp
+
+Escolha uma das telas do projeto (por exemplo, **Home**, **Contato** ou **Sobre**) e adicione um botão para que o usuário possa entrar em contato pelo WhatsApp.
+
+### Exemplo
+
+```html
+<a href="https://wa.me/5584999999999" target="_blank">
+    <button>Entrar em contato pelo WhatsApp</button>
+</a>
+```
+
+Substitua `5584999999999` pelo número de WhatsApp do grupo, incluindo:
+
+- Código do país (**55** para Brasil)
+- DDD
+- Número do telefone
+
+Exemplo:
+
+```
+5584987654321
+```
+
+---
+
+### Enviando uma mensagem automática
+
+Também é possível abrir o WhatsApp já com uma mensagem preenchida.
+
+```html
+<a href="https://wa.me/5584999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20projeto." target="_blank">
+    <button>Fale conosco</button>
+</a>
+```
+
+---
+
+### Caso o botão já exista no protótipo
+
+Basta alterar o atributo `href`.
+
+**Antes**
+
+```html
+<a href="#">Contato</a>
+```
+
+**Depois**
+
+```html
+<a href="https://wa.me/5584999999999" target="_blank">
+    Contato
+</a>
+```
+
+---
+
+## Passo 13 — Testar
+
+Execute novamente a aplicação.
+
+```bash
+python manage.py runserver
+```
 
 Verifique:
 
